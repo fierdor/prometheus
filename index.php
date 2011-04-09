@@ -5,6 +5,9 @@
 <title>Prometheus</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
+<script type="text/javascript" src="scripts/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ui-1.8.11.custom.min.js"></script>
+<LINK href="css/smoothness/jquery-ui-1.8.11.custom.css" rel="stylesheet" type="text/css">
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
@@ -39,6 +42,8 @@
 		<div id="column2">
 		<h3>Quick Links</h3> 
 		<?php include('sidebar.php');?>
+		<br>
+		<?php include('sidebar1.php');?>		
 		</div>
 	</div>
 	<div style="clear: both;">&nbsp;</div>
@@ -46,7 +51,7 @@
 <div id="footer">
 	<p>&copy;&nbsp;Copyright 2010. All Rights Reserved. template design by <a href="http://www.TemplatesPerfect.com" class="links">Free web Templates</a> </p>
 </div>
-<!-- Do not chnage below this -->
+<!-- Do not change below this -->
 <a href="http://www.templatesperfect.com" title="Designed by TemplatesPerfect.com"><img src="images/tp.png" alt="" width="12" height="12" border="0" /></a>
 </body>
 </html>
