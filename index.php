@@ -39,25 +39,6 @@
 		<div id="column2">
 		<h3>Quick Links</h3> 
 		<?php include('sidebar.php');?>
-		<ul id="sidemenu">
-	<h4>SNMP</h4>
-    	<li id="snmpdata"><a href="#" id="snmp">SNMP</a>
-        	<ul>
-            <li></li>
-   			<li></li>
-            <li></li>
-			<li></li>			
-   		    </ul>
-        </li>
-        <li id="interface"><a href="#">Interface</a>
-        	<ul>
-            <li></li>
-   	        <li></li>
-			<li></li>	
-   		    </ul>
-        </li>
-        
-         </ul>
 		</div>
 	</div>
 	<div style="clear: both;">&nbsp;</div>
