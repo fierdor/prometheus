@@ -33,3 +33,17 @@ $.post("routerajax.php",{router:router},function(data){
  });
 </script>  
 
+<div id="sidebar">
+	<h3><a href="#">SNMP</a></h3>
+	<div id="sidemenu">        
+	<ul>
+        </ul>
+	</div>
+	<h3><a href="#">Interfaces</a></h3>        
+		<ul>
+            <li></li>
+   	        <li></li>
+			<li></li>	
+   		    </ul>
+        
+</div>
