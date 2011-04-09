@@ -12,7 +12,7 @@ return $res[$side];
 $res=mysql_query("select * from graph_links");
 $res1=mysql_query("select * from graph_nodes");
 // create a blank image
-$image = imagecreatetruecolor(400,400);
+$image = imagecreatetruecolor(560,400);
 
 // fill the background color
 $bg = imagecolorallocate($image, 0, 0, 0);
