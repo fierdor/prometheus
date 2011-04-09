@@ -29,7 +29,7 @@ echo "<a href='#'><h3>Interface".$i."</h3></a>";
 echo "<li>Interface Description:".$a[$i]['ifDescr']."</li>";
 echo "<li>Interface MTU:".$a[$i]['ifMtu']."</li>";
 echo "<li>Interface Speed:".$a[$i]['ifSpeed']."</li>";
-echo "<li>Interface Physical Address:".$a[$i]['ifPhysAddress']."</li>";
+echo "<li>Physical Address:".$a[$i]['ifPhysAddress']."</li>";
 echo "<li>Interface Operation Status:".$a[$i]['ifOperStatus']."</li>";
 echo "<li>Interface IP Address:".$a[$i]['ifipAddress']."</li>";
 echo "<li>Interface IP NetMask:".$a[$i]['ifipNetmask']."</li>";
