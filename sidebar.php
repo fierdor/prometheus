@@ -1,27 +1,25 @@
-<script type="text/javascript" src="scripts/jquery.js"></script>
-<!--script type="text/javascript" src="scripts/accordion.js"></script-->
+<script type="text/javascript" src="scripts/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ui-1.8.11.custom.min.js"></script>
+<LINK href="css/smoothness/jquery-ui-1.8.11.custom.css" rel="stylesheet" type="text/css">
+
+
 <script type="text/javascript">                                         
 $(document).ready(function() {
-	$('#sidemenu ul').hide();
-	$('#sidemenu ul:first').show();
-	$('#sidemenu li a').live('click',function()
-	{
-	
-	var temp=$(this).next('ul').toggle();
-	
+	$("#sidebar").accordion({
+			collapsible: true
 	});
-    $("AREA").click(function() {
+	    $("AREA").click(function() {
      var router=$(this).attr('id');
      
 $.post("routerajax.php",{router:router},function(data){
 				if(data.length>0)
 				{
 					
-					$("#sidemenu").html(data);
+					$("#sidebar").html(data);
 					
 				}
 				else{
-					$("#sidemenu").html("");
+					$("#sidebar").html("");
 				}
 			});
 
@@ -34,16 +32,6 @@ $.post("routerajax.php",{router:router},function(data){
 </script>  
 
 <div id="sidebar">
-	<h3><a href="#">SNMP</a></h3>
-	<div id="sidemenu">        
-	<ul>
-        </ul>
-	</div>
-	<h3><a href="#">Interfaces</a></h3>        
-		<ul>
-            <li></li>
-   	        <li></li>
-			<li></li>	
-   		    </ul>
-        
+
+
 </div>

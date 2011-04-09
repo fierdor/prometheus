@@ -5,8 +5,8 @@ include("router_if.php");
 mysql_select_db("snmpv2-mib",$conn);
 $router=$_POST['router'];
 
-echo "<li><a href='#'><h4>SNMP</h4></a>";
-echo "<ul>";
+echo "<h3><a href='#'>SNMP</a></h3>";
+echo "<div id='snmp'>";
 echo "<li>Name:".$router."</li>";
 echo "<li>Description:".getsysDescr($router)."</li>";
 echo "<li>Object ID:".getsysObjectID($router)."</li>";
@@ -14,18 +14,18 @@ echo "<li>Contact:".getsysContact($router)."</li>";
 echo "<li>Location:".getsysLocation($router)."</li>";
 echo "<li>Services:Network Layer</li>";
 echo "<li>Uptime:".getsysUpTime($router)."</li>";
-echo "</ul>";
-echo "</li>";
+echo "</div>";
+
 mysql_select_db("if-mib",$conn);
 
-echo "<h4>Interfaces</h4>";
+echo "<h3><a href='#'>Interfaces</a></h3>";
 $a=getiftable($router);
 //print_r ($a);
-//echo "<li>Interface Description".$a[1]['ifDescr']."</li>";
-
+//echo "<div id='interfaces'>Interface Description".$a[1]['ifDescr']."</div>";
+echo "<div id='interface'>";
 for($i=1;$i<=$a['count'];$i++)
 {
-echo "<h3>Interface".$i."</h3>";
+echo "<a href='#'><h3>Interface".$i."</h3></a>";
 echo "<li>Interface Description:".$a[$i]['ifDescr']."</li>";
 echo "<li>Interface MTU:".$a[$i]['ifMtu']."</li>";
 echo "<li>Interface Speed:".$a[$i]['ifSpeed']."</li>";
@@ -34,7 +34,5 @@ echo "<li>Interface Operation Status:".$a[$i]['ifOperStatus']."</li>";
 echo "<li>Interface IP Address:".$a[$i]['ifipAddress']."</li>";
 echo "<li>Interface IP NetMask:".$a[$i]['ifipNetmask']."</li>";
 }
-
-echo "<script type='text/javascript' src='scripts/accordion.js'></script>";
-
+echo "</div>";
 ?>
