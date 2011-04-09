@@ -51,7 +51,7 @@
 <div id="footer">
 	<p>&copy;&nbsp;Copyright 2010. All Rights Reserved. template design by <a href="http://www.TemplatesPerfect.com" class="links">Free web Templates</a> </p>
 </div>
-<!-- Do not chnage below this -->
+<!-- Do not change below this -->
 <a href="http://www.templatesperfect.com" title="Designed by TemplatesPerfect.com"><img src="images/tp.png" alt="" width="12" height="12" border="0" /></a>
 </body>
 </html>
