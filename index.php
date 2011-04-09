@@ -42,8 +42,9 @@
 		<div id="column2">
 		<h3>Quick Links</h3> 
 		<?php include('sidebar.php');?>
-		<br>
-		<?php include('sidebar1.php');?>		
+		<?php include('sidebar1.php');?>
+		<?php include('side_path.php');?>
+	
 		</div>
 	</div>
 	<div style="clear: both;">&nbsp;</div>
