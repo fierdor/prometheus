@@ -1,0 +1,225 @@
+/*
+Template Design by http://www.templatesPerfect.com
+Template Name: Corporate Perfect
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #FFFFFF;
+	text-align: justify;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+}
+
+p, ul, ol {
+	margin: 0px;
+	padding: 0px;
+	line-height: 23px;
+}
+
+h1, h2, h3 {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	font-size: 30px;
+}
+
+h2 {
+	font-size: 17px;
+}
+
+h3 {
+	font-size: 14px;
+}
+
+p, ul, ol {
+	margin-top: 1.5em;
+}
+
+ul, ol {
+	margin-left: 3em;
+}
+
+a {
+	color: #9CC54F;
+}
+
+blockquote {
+	margin-left: 3em;
+	margin-right: 3em;
+}
+
+#header { background:url(images/header.jpg) no-repeat top right;
+	width: 900px;
+	height: 177px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+#navigation {
+	background: #FFFFFF url(images/image01.jpg) repeat-x left top;
+	width: 900px;
+	height: 52px;
+	margin: 50px 0 0 0;
+	padding: 0 10px 0 10px;
+	border-left:1px solid #CCCCCC;
+	border-right:1px solid #CCCCCC;
+}
+
+#navigation ul {
+	margin: 0px;
+	list-style: none;
+}
+
+#navigation li {
+	display: inline;
+}
+
+#navigation a {
+	display: block;
+	float: left;
+	height: 49px;
+	margin-right: 2px;
+	padding: 15px 30px 0px 30px;
+	background: url(images/image02.jpg) no-repeat right 16px;
+	text-decoration: none;
+	color: #525250;
+	font-weight:bold;
+}
+
+#navigation .first {
+	padding-left: 0px;
+}
+
+
+#logo {
+	width: 900px;
+	height: 64px;
+	margin-top:10px;
+	padding-top: 5px;
+}
+
+#logo h1 {
+	margin: 0px;
+	padding: 0px;
+	letter-spacing: 1px;
+	font-weight: normal;
+	font-size: 36px;
+	color:#336633;
+}
+
+#logo p {
+	margin: -8px;
+	padding: 0px 0px 0px 12px;
+	font-size: 12px;
+	font-weight: normal;
+	color: #888888;
+}
+
+#logo span {
+	margin: 0px;
+	padding: 0px;
+	font-size: 16px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #666666;
+}
+
+#splash {
+	width: 900px;
+	height: 300px;
+	margin: 0px auto;
+	padding: 30px 0px;
+}
+
+#content {
+	padding: 0px 0px 20px 0px;
+}
+
+#page {
+	width: 900px;
+	margin: 0px auto;
+	padding: 10px 0px 20px 0px;
+}
+
+#column1 img { float:left;
+padding:3px;
+margin:5px;
+border:3px solid #CCCCCC;
+/*width:280px; height:220px;*/
+}
+#column1 {
+	float: left;
+	width: 580px;
+	padding-right: 30px;
+}
+
+#column1 h2 {
+	padding-bottom: 6px;
+	background: url(images/image03.jpg) repeat-x left bottom;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: normal;
+	color: #525250;
+}
+
+#column2 {
+	float: right;
+	width: 260px;
+}
+
+#column2 h2 {
+	padding-bottom: 6px;
+	background: url(images/image03.jpg) repeat-x left bottom;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: normal;
+	color: #525250;
+}
+
+.separator {
+	background: url(images/image03.jpg) repeat-x left bottom;
+}
+
+a.menu-right, a.menu-right:visited {font-size: 14px; line-height:30px; padding-left:20px; text-decoration:none; color:#aaaaaa; display:block; border-bottom:#CCCCCC solid 1px}
+a.menu-right:hover {background-color:#2679B7; color:#D8E9F1}
+
+.more {
+	padding: 3px 10px;
+	background: #474747;
+	text-decoration: none;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+
+#footer {
+	width: 900px;
+	margin: 0px auto;
+	padding: 5px 10px;
+	border-top: 1px dashed #cccccc;
+	text-align:right;
+}
+
+#footer p {
+	text-transform: uppercase;
+	font-size: 10px;
+	color: #90908E;
+}
+
+#footer .links {
+	text-decoration: none;
+	color: #9CC54F;
+}
