@@ -1,25 +1,33 @@
-<script type="text/javascript" src="scripts/jquery-1.5.1.min.js"></script>
-<script type="text/javascript" src="scripts/jquery-ui-1.8.11.custom.min.js"></script>
-<LINK href="css/smoothness/jquery-ui-1.8.11.custom.css" rel="stylesheet" type="text/css">
+
 
 
 <script type="text/javascript">                                         
+$(function() {
+		$( "#accordion" ).accordion({collapsible: true,autoHeight: false});
+	});
+$(function() {
+		$( "#accordion1" ).accordion({collapsible: true,autoHeight: false });
+	});
+
 $(document).ready(function() {
-	$("#sidebar").accordion({
+	/*$("#sidebar").accordion({
 			collapsible: true
 	});
-	    $("AREA").click(function() {
+$("#interface").accordion({
+			collapsible: true
+	});*/	   
+ $("AREA").click(function() {
      var router=$(this).attr('id');
      
 $.post("routerajax.php",{router:router},function(data){
 				if(data.length>0)
 				{
 					
-					$("#sidebar").html(data);
+					$("#snmp").html(data);
 					
 				}
 				else{
-					$("#sidebar").html("");
+					$("#snmp").html("");
 				}
 			});
 
@@ -29,9 +37,33 @@ $.post("routerajax.php",{router:router},function(data){
 
 	
  });
+/* $("AREA").click(function() {
+     var router=$(this).attr('id');
+$.post("interfaceajax.php",{router:router},function(data){
+				if(data.length>0)
+				{
+					
+					$("#interface").html(data);
+					
+				}
+				else{
+					$("#interface").html("");
+				}
+			});
+
+	
+   });
+});*/
 </script>  
 
-<div id="sidebar">
-
-
+<div id="accordion">
+ <h3><a href="#">Router Details</a></h3>
+   <div id = 'snmp'></div>
 </div>
+<!--div id="accordion1">
+   
+   <h3><a href="#">Interfaces</a></h3>
+   <div id ='interface'></div>
+
+</div-->
+
