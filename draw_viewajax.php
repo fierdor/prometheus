@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("database.php");
-include("trial_path.php");
+include("find_path.php");
 $router1 = $_SESSION['router1'];
 $router2 = $_SESSION['router2'];
 function state($node){

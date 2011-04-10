@@ -1,6 +1,6 @@
 <script>
 $(function() {
-		$( "#pathacc" ).accordion({collapsible: true,autoHeight: false });
+		$( "#pathacc" ).accordion({collapsible: true,autoHeight: false,active: false });
 	});
 $(document).ready(function() {
 

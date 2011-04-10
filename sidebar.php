@@ -1,6 +1,6 @@
 <script type="text/javascript">                                         
 $(function() {
-		$( "#accordion" ).accordion({collapsible: true,autoHeight: false});
+		$( "#accordion" ).accordion({collapsible: true,autoHeight: false,active: false});
 	});
 
 $(document).ready(function() {
