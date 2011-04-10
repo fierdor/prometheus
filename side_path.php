@@ -7,6 +7,8 @@ $(document).ready(function() {
 $("#path").click(function() {
      var router2=$('#router2').val();
      var router1=$('#router1').val();
+	if(router1 == router2)
+	alert("Path not possible");
 $.post("viewajax.php",{router1:router1,router2:router2},function(data){
 				if(data.length>0)
 				{
@@ -32,11 +34,15 @@ $.post("viewajax.php",{router1:router1,router2:router2},function(data){
   <option value="ce1_1">CE1_1</option>
   <option value="ce1_2">CE1_2</option>
   <option value="ce1_3">CE1_3</option>
+  <option value="ce2_1">CE2_1</option>
+  <option value="ce2_2">CE2_2</option>
 </select>
 <select id="router2">
   <option value="ce1_1">CE1_1</option>
   <option value="ce1_2">CE1_2</option>
   <option value="ce1_3">CE1_3</option>
+  <option value="ce2_1">CE2_1</option>
+  <option value="ce2_2">CE2_2</option>
 </select>
 <input type="button" id="path" value="Submit" />
 </div>
