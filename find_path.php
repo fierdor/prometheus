@@ -5,6 +5,23 @@ include("router_vpn.php");
 include("router_ftn.php");
 include("router_lsr.php");
 
+function firstpe($router1,$router2)
+{
+$pe = find_path_pe($router1);
+$bcast_r2 = getbcastaddr($router2,1);
+$rifcount = getiftable($pe);
+$countif = $rifcount['count'];
+for($j=1;$j<=$countif;$j++)
+	{
+	$rbcast = getbcastaddr($pe,$j);
+	if($rbcast == $bcast_r2)
+		{
+		return true;
+		}
+	}
+return false;
+}
+
 function find_path_pe($router1)
 {
 include("database.php");
@@ -110,6 +127,11 @@ function findpath($router1,$router2){
 $path=array($router1);
 $pe=find_path_pe($router1);
 array_push($path,$pe);
+if(firstpe($router1,$router2))
+	{
+	array_push($path,$router2);
+	return $path;
+	}
 $pe_out=find_path_p($router1,$router2);
 $next_p=match_if($pe,$pe_out[1]);
 array_push($path,$next_p[0]);
@@ -120,5 +142,4 @@ array_push($path1[0],$router2);
 return $path1[0];
 mysql_close($conn);
 }
-
 ?>
