@@ -7,8 +7,14 @@ $(document).ready(function() {
 $("#path").click(function() {
      var router2=$('#router2').val();
      var router1=$('#router1').val();
-	if(router1 == router2)
+     var arr1 = router1.split("_");
+     var arr2 = router2.split("_");
+     if(arr1[0] != arr2[0])
 	alert("Path not possible");
+	else if(router1 == router2)
+	alert("Path not possible");
+else
+{
 $.post("viewajax.php",{router1:router1,router2:router2},function(data){
 				if(data.length>0)
 				{
@@ -21,7 +27,7 @@ $.post("viewajax.php",{router1:router1,router2:router2},function(data){
 				}
 			});
 
-	
+}	
    });
 });
 </script>

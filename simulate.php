@@ -19,12 +19,12 @@
 	<div id="navigation">
 		<ul>
 			<li><a href="#" class="first">Home</a></li>
-			<li><a href="simulate.php">Simulate</a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Partners</a></li>
+			<li><a href="#">Outsource</a></li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Support</a></li>
+			<li><a href="#">Contact</a></li>
 		</ul>
 	</div>
 </div>
@@ -41,9 +41,9 @@
 		</div>
 		<div id="column2">
 		<h3>Quick Links</h3> 
-		<?php include('sidebar.php');?>
-		<?php include('sidebar1.php');?>
-		<?php include('side_path.php');?>
+		<?php// include('sidebar.php');?>
+		<?php// include('sidebar1.php');?>
+		<?php// include('side_path.php');?>
 	
 		</div>
 	</div>

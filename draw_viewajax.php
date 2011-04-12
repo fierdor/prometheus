@@ -19,8 +19,7 @@ $res=mysql_fetch_array($row);
 return $res[$side];
 }
 
-$arr = findpath($router1,$router2);
-
+$arr = findpath($router1, $router2);
 mysql_select_db('prometheus_graph',$conn);
 $res=mysql_query("select * from graph_links");
 $res1=mysql_query("select * from graph_nodes");

@@ -4,7 +4,6 @@ include("router_if.php");
 include("router_vpn.php");
 include("router_ftn.php");
 include("router_lsr.php");
-
 function firstpe($router1,$router2)
 {
 $pe = find_path_pe($router1);
@@ -41,6 +40,7 @@ $countif = $rifcount['count'];
 	$rbcast = getbcastaddr($a[$i],$j);
 	if($rbcast == $bcast_r1)
 		{
+		
 		$pe = $a[$i];
 		return $pe;
 		}
