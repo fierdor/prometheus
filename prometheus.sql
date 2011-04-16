@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 08, 2011 at 02:40 PM
+-- Generation Time: Apr 16, 2011 at 05:30 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -704,7 +704,7 @@ CREATE TABLE IF NOT EXISTS `mplsftntable_pe2` (
 INSERT INTO `mplsftntable_pe2` (`mplsFTNIndex`, `mplsFTNSourceIpv4AddrMin`, `mplsFTNSourceIpv4AddrMax`, `mplsFTNDestIpv4AddrMin`, `mplsFTNDestIpv4AddrMax`, `mplsFTNActionType`, `mplsFTNActionPointer`) VALUES
 (1, '10.3.0.0', '0.0.0.0', '10.1.0.0', '0.0.0.0', 'redirectLSP', 1),
 (2, '10.3.0.0', '0.0.0.0', '10.2.0.0', '0.0.0.0', 'redirectLSP', 1),
-(3, '172.16.2.0', '0.0.0.0', '172.16.1.0', '0.0.0.0', 'redirectLSP', 2);
+(3, '172.16.2.0', '0.0.0.0', '172.16.1.0', '0.0.0.0', 'redirectLSP', 3);
 --
 -- Database: `mpls-ldp-mib`
 --
@@ -1152,6 +1152,150 @@ CREATE TABLE IF NOT EXISTS `mplsinterfaceperftable` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mplsinterfaceperftable_p1`
+--
+
+CREATE TABLE IF NOT EXISTS `mplsinterfaceperftable_p1` (
+  `mplsInterfaceInLabelsUsed` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceInPackets` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceInDiscards` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceFailedLabelLookup` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutLabelsUsed` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutPackets` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutDiscards` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutFragments` bigint(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mplsinterfaceperftable_p1`
+--
+
+INSERT INTO `mplsinterfaceperftable_p1` (`mplsInterfaceInLabelsUsed`, `mplsInterfaceInPackets`, `mplsInterfaceInDiscards`, `mplsInterfaceFailedLabelLookup`, `mplsInterfaceOutLabelsUsed`, `mplsInterfaceOutPackets`, `mplsInterfaceOutDiscards`, `mplsInterfaceOutFragments`) VALUES
+(0, 0, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mplsinterfaceperftable_p2`
+--
+
+CREATE TABLE IF NOT EXISTS `mplsinterfaceperftable_p2` (
+  `mplsInterfaceInLabelsUsed` bigint(20) NOT NULL,
+  `mplsInterfaceInPackets` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceInDiscards` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceFailedLabelLookup` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutLabelsUsed` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutPackets` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutDiscards` bigint(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutFragments` bigint(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mplsinterfaceperftable_p2`
+--
+
+INSERT INTO `mplsinterfaceperftable_p2` (`mplsInterfaceInLabelsUsed`, `mplsInterfaceInPackets`, `mplsInterfaceInDiscards`, `mplsInterfaceFailedLabelLookup`, `mplsInterfaceOutLabelsUsed`, `mplsInterfaceOutPackets`, `mplsInterfaceOutDiscards`, `mplsInterfaceOutFragments`) VALUES
+(0, 0, 0, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mplsinterfaceperftable_p3`
+--
+
+CREATE TABLE IF NOT EXISTS `mplsinterfaceperftable_p3` (
+  `mplsInterfaceInLabelsUsed` varchar(20) NOT NULL,
+  `mplsInterfaceInPackets` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceInDiscards` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceFailedLabelLookup` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutLabelsUsed` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutPackets` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutDiscards` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutFragments` varchar(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mplsinterfaceperftable_p3`
+--
+
+INSERT INTO `mplsinterfaceperftable_p3` (`mplsInterfaceInLabelsUsed`, `mplsInterfaceInPackets`, `mplsInterfaceInDiscards`, `mplsInterfaceFailedLabelLookup`, `mplsInterfaceOutLabelsUsed`, `mplsInterfaceOutPackets`, `mplsInterfaceOutDiscards`, `mplsInterfaceOutFragments`) VALUES
+('0', '0', '0', '0', '0', '0', '0', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mplsinterfaceperftable_p4`
+--
+
+CREATE TABLE IF NOT EXISTS `mplsinterfaceperftable_p4` (
+  `mplsInterfaceInLabelsUsed` varchar(20) NOT NULL,
+  `mplsInterfaceInPackets` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceInDiscards` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceFailedLabelLookup` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutLabelsUsed` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutPackets` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutDiscards` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutFragments` varchar(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mplsinterfaceperftable_p4`
+--
+
+INSERT INTO `mplsinterfaceperftable_p4` (`mplsInterfaceInLabelsUsed`, `mplsInterfaceInPackets`, `mplsInterfaceInDiscards`, `mplsInterfaceFailedLabelLookup`, `mplsInterfaceOutLabelsUsed`, `mplsInterfaceOutPackets`, `mplsInterfaceOutDiscards`, `mplsInterfaceOutFragments`) VALUES
+('0', '0', '0', '0', '0', '0', '0', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mplsinterfaceperftable_pe1`
+--
+
+CREATE TABLE IF NOT EXISTS `mplsinterfaceperftable_pe1` (
+  `mplsInterfaceInLabelsUsed` varchar(20) NOT NULL,
+  `mplsInterfaceInPackets` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceInDiscards` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceFailedLabelLookup` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutLabelsUsed` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutPackets` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutDiscards` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutFragments` varchar(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mplsinterfaceperftable_pe1`
+--
+
+INSERT INTO `mplsinterfaceperftable_pe1` (`mplsInterfaceInLabelsUsed`, `mplsInterfaceInPackets`, `mplsInterfaceInDiscards`, `mplsInterfaceFailedLabelLookup`, `mplsInterfaceOutLabelsUsed`, `mplsInterfaceOutPackets`, `mplsInterfaceOutDiscards`, `mplsInterfaceOutFragments`) VALUES
+('0', '1', '0', '0', '0', '100', '0', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mplsinterfaceperftable_pe2`
+--
+
+CREATE TABLE IF NOT EXISTS `mplsinterfaceperftable_pe2` (
+  `mplsInterfaceInLabelsUsed` varchar(20) NOT NULL,
+  `mplsInterfaceInPackets` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceInDiscards` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceFailedLabelLookup` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutLabelsUsed` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutPackets` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutDiscards` varchar(20) NOT NULL DEFAULT '0',
+  `mplsInterfaceOutFragments` varchar(20) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mplsinterfaceperftable_pe2`
+--
+
+INSERT INTO `mplsinterfaceperftable_pe2` (`mplsInterfaceInLabelsUsed`, `mplsInterfaceInPackets`, `mplsInterfaceInDiscards`, `mplsInterfaceFailedLabelLookup`, `mplsInterfaceOutLabelsUsed`, `mplsInterfaceOutPackets`, `mplsInterfaceOutDiscards`, `mplsInterfaceOutFragments`) VALUES
+('0', '0', '0', '0', '0', '0', '0', '0');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mplslabelstacktable`
 --
 
@@ -1361,8 +1505,8 @@ CREATE TABLE IF NOT EXISTS `mplsoutsegmenttable_p4` (
 --
 
 INSERT INTO `mplsoutsegmenttable_p4` (`mplsOutSegmentIndex`, `mplsOutSegmentTrafficParamPtr`, `mplsOutSegmentRowStatus`, `mplsOutSegmentStorageType`, `mplsOutSegmentAdminStatus`, `mplsOutSegmentOperStatus`, `mplsOutSegmentIfIndex`, `mplsOutSegmentPushTopLabel`, `mplsOutSegmentTopLabel`, `mplsOutSegmentNextHopIpAddrType`, `mplsOutSegmentNextHopIpv4Addr`, `mplsOutSegmentXCIndex`, `mplsOutSegmentOwner`) VALUES
-(3, 2, 1, 3, 1, 1, 3, 'false', 0, 1, '192.168.8.2', 1, 3),
-(1, 4, 1, 3, 1, 1, 1, 'true', 4, 1, '192.168.5.1', 2, 3);
+(1, 2, 1, 3, 1, 1, 1, 'false', 0, 1, '192.168.8.2', 1, 3),
+(3, 4, 1, 3, 1, 1, 3, 'true', 4, 1, '192.168.5.1', 2, 3);
 
 -- --------------------------------------------------------
 
