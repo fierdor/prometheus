@@ -51,8 +51,9 @@ $countif = $rifcount['count'];
 
 function find_path_p($router1, $router2)
 {
-$pe = find_path_pe($router1);
-
+//$pe = find_path_pe($router1);
+$pe1=match_if($router1,1);
+$pe=$pe1[0];
 $pe_ftntable = getmplsftntable($pe);
 $pe_xctable = getmplsxctable($pe);
 $pe_outtable = getmplsoutsegmenttable($pe);
@@ -61,7 +62,7 @@ for($i=1;$i<=$pe_ftntable['count'];$i++)
 	{
 	for($j=1;$j<=$pe_ftntable['count'];$j++)
 	{
-		if ($pe_ftntable[$i]['mplsFTNActionPointer'] == $pe_outtable[$j]['mplsOutSegmentXCIndex'])
+		if (($pe_ftntable[$i]['mplsFTNActionPointer'] == $pe_outtable[$j]['mplsOutSegmentXCIndex'])&&($pe_ftntable[$i]['mplsFTNDestIpv4AddrMin'] == getbcastaddr($router2,1)))
 		{
 		$outlabel = $pe_outtable[$j]['mplsOutSegmentTopLabel'];
 		$outif = $pe_outtable[$j]['mplsOutSegmentIfIndex'];
@@ -125,7 +126,9 @@ $countif = $rifcount['count'];
 
 function findpath($router1,$router2){
 $path=array($router1);
-$pe=find_path_pe($router1);
+$pe1=match_if($router1,1);
+$pe=$pe1[0];
+//$pe=find_path_pe($router1);
 array_push($path,$pe);
 if(firstpe($router1,$router2))
 	{
