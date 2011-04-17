@@ -52,5 +52,3 @@ else
 return false;
 }
 ?>
-
-
