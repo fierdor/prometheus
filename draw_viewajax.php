@@ -39,11 +39,11 @@ if($row['state']=="up")
 imageline($image,coord($row['pt1'],"x"),coord($row['pt1'],"y"),coord($row['pt2'],"x"),coord($row['pt2'],"y"),$blue);
 }
 
-$count = sizeof($arr);
+$count = sizeof($arr[0]);
 for($i=0;$i<$count-1;$i++)
 {
-$node1 = strtoupper($arr[$i]);
-$node2 = strtoupper($arr[$i+1]);
+$node1 = strtoupper($arr[0][$i]);
+$node2 = strtoupper($arr[0][$i+1]);
 
 $res2 = mysql_query("select id from graph_nodes where name = '$node1'");
 $res3 = mysql_query("select id from graph_nodes where name = '$node2'");
