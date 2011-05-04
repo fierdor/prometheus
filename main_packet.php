@@ -8,23 +8,22 @@ $router2 = "ce1_3";
 $arr = findpath($router1,$router2);
 $size = sizeof($arr[0]);
 $count = 100;
-//print_r($arr);
 for($i=1; $i<$size-1 ; $i++)
     {
         if($i==1)
 	{
-        setoutpackets($arr[0][$i], $count);
+        if(setoutpackets($arr[0][$i], $arr[1][2], $count))
 	echo "Packets out from $arr[0][$i] is $count";	
 	}
-        else if($i==size-2)
+        else if($i==$size-2)
 	{
-        setinpackets($arr[0][$i], $count);
+	if(setinpackets($arr[0][$i],$arr[1][$size*2-2], $count))
 	echo "Packets out from $arr[0][$i] is $count";
 	}        
 	else
         {
-            setinpackets($arr[0][$i], $count);
-            setoutpackets($arr[0][$i], $count);
+            setinpackets($arr[0][$i], $arr[1][$i*2-1], $count);
+            setoutpackets($arr[0][$i], $arr[1][$i*2], $count);
 	    echo "Packets out and in from $arr[0][$i] is $count";
         }
     }
