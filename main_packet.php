@@ -8,6 +8,7 @@ $router2 = "ce1_3";
 $arr = findpath($router1,$router2);
 $size = sizeof($arr[0]);
 $count = 100;
+//print_r($arr);
 for($i=1; $i<$size-1 ; $i++)
     {
         if($i==1)

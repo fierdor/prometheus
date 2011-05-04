@@ -14,13 +14,15 @@ $countif = $rifcount['count'];
 for($j=1;$j<=$countif;$j++)
 	{
 	$rbcast = getbcastaddr($pe,$j);
+	//echo "\n".$pe;
 	if($rbcast == $bcast_r2)
 		{
-		//array_push($ifs, $j);
+		//array_push($ifs,$j);
 		return true;
 		}
 	}
 return false;
+//echo "I am out of firstpe<br>";
 }
 
 function find_path_pe($router1)
@@ -31,6 +33,7 @@ mysql_select_db('ip-mib',$conn);
 $a=array('ce1_1','ce1_2','ce1_3','ce2_1','ce2_2','p1','p2','p3','p4','pe1','pe2');
 $pe = 0;
 $bcast_r1 = getbcastaddr($router1,1);
+//echo "/n".$router1;
 $count = sizeof($a);
 
 for($i=0;$i<$count;$i++) {
@@ -41,16 +44,18 @@ $countif = $rifcount['count'];
 	for($j=1;$j<=$countif;$j++)
 	{
 	$rbcast = getbcastaddr($a[$i],$j);
+	//echo "\n".$a[$i];
 	if($rbcast == $bcast_r1)
 		{
 		$pe = $a[$i];
-		echo "PE router".$pe;
-		//array_push($ifs, $j);
+		//echo "PE router".$pe;
+		//echo "I pushed here in find_path_pe".$j."<br>";
 		return $pe;
 		}
 	}
 }
 }
+//echo "I am out of find_path_pe<br>";
 }
 
 function find_path_p($router1, $router2)
@@ -74,11 +79,11 @@ for($i=1;$i<=$pe_ftntable['count'];$i++)
 		$outlabel = $pe_outtable[$j]['mplsOutSegmentTopLabel'];
 		$outif = $pe_outtable[$j]['mplsOutSegmentIfIndex'];
 		$out = array($outlabel, $outif);
-		array_push($ifs,$outif);
 		return $out;
 		}
 	}
 	}
+//echo "I am out of find_path_p<br>";
 
 }
 
@@ -95,8 +100,9 @@ for($i=1;$i<=$pe_xctable['count'];$i++)
 		{
 		$outlabel = $pe_outtable[$j]['mplsOutSegmentTopLabel'];
 		$outif = $pe_outtable[$j]['mplsOutSegmentIfIndex'];
-		array_push($ifs, $outif);
 		$nxt_router=match_if($router,$outif);
+		array_push($ifs,$outif);
+		array_push($ifs,$nxt_router[1]);
 		array_push($arr,$nxt_router[0]);		
 		if($outlabel!=0)		
 		find_p($nxt_router[0],$outlabel,$outif,$arr);
@@ -111,7 +117,8 @@ return $out;
 function match_if($pe,$if){
 global $ifs;
 $bcast_r1 = getbcastaddr($pe,$if);
-$a=array('ce1_1','ce1_2','ce1_3','ce2_1','ce2_2','pe1','pe2','p1','p2','p3','p4');
+//echo "/n".$pe;
+$a=array('pe1','pe2','p1','p2','p3','p4');
 $count = sizeof($a);
 for($i=0;$i<$count;$i++) {
 if ($a[$i]!=$pe)
@@ -121,12 +128,12 @@ $countif = $rifcount['count'];
 	for($j=1;$j<=$countif;$j++)
 	{
 	$rbcast = getbcastaddr($a[$i],$j);
+	//echo "\n".$a[$i];
 	if($rbcast == $bcast_r1)
 		{
 		$p = $a[$i];
-		$inif = $j;		
+		$inif = $j;
 		$out = array($p,$inif);
-		array_push($ifs, $inif);			
 		return $out;
 		}
 	}
@@ -138,7 +145,8 @@ $countif = $rifcount['count'];
 function findpath($router1,$router2){
 global $ifs;
 $path=array($router1);
-$pe1=match_if($router1,1);
+$pe1=match_if($router1,1); 
+array_push($ifs,$pe1[1]);
 $pe=$pe1[0];
 //$pe=find_path_pe($router1);
 array_push($path,$pe);
@@ -148,17 +156,24 @@ if(firstpe($router1,$router2))
 	return $path;
 	}
 $pe_out=find_path_p($router1,$router2);
+array_push($ifs,$pe_out[1]);
 $next_p=match_if($pe,$pe_out[1]);
+array_push($ifs,$next_p[1]);
 array_push($path,$next_p[0]);
 $path1=find_p($next_p[0],$pe_out[0],$next_p[1],$path);
 $last_pe=match_if($path1[1],$path1[2]);
+$lastpe=match_if($router2,1);
+array_push($ifs,$lastpe[1]);
+array_push($ifs,1);
 array_push($path1[0],$last_pe[0]);
 array_push($path1[0],$router2);
 array_pop($path1);
 array_pop($path1);
 array_push($path1, $ifs);
+//echo "IFS HERE";
+//print_r($ifs);
 return $path1;
+
 mysql_close($conn);
 }
-//findpath('ce2_2','ce2_1');
 ?>
